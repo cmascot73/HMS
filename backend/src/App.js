@@ -1,9 +1,11 @@
 require('dotenv').config();
 const express = require('express');
 const PORT = process.env.PORT;
+const patientRoutes = require('./routes/patients');
 
 const app = express();
 app.use(express.json());
+app.use('/api/patients', patientRoutes);
 
 const db = require('./config/db');
 
